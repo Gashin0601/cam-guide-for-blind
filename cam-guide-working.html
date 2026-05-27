@@ -336,6 +336,56 @@ body {
 .mute-btn.muted { background: var(--red-light); border-color: var(--red); color: var(--red-dark); }
 
 /* FACE BOX CANVAS DRAWING — done in JS */
+
+/* ─── RESPONSIVE ───────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  body {
+    padding: 12px;
+    align-items: flex-start;
+  }
+  .app {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    border-radius: var(--radius-md);
+  }
+  .sidebar {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 14px;
+    border-right: none;
+    border-bottom: 0.5px solid var(--gray-300);
+  }
+  .sidebar .logo { margin-bottom: 0; flex-shrink: 0; }
+  .sidebar .nav-item { display: none; }
+  .streak-box {
+    margin-top: 0;
+    margin-left: auto;
+    padding: 6px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .streak-label { display: none; }
+  .streak-num { font-size: 18px; }
+  .streak-sub { margin-top: 0; font-size: 11px; }
+  .main { padding: 16px; gap: 14px; }
+  .page-title { font-size: 18px; }
+  .cam-area {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+  .lang-toggle {
+    top: 10px;
+    right: 10px;
+  }
+  .checks { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 380px) {
+  .checks { grid-template-columns: 1fr; }
+  .streak-box { display: none; }
+}
 </style>
 </head>
 <body>
