@@ -1059,6 +1059,9 @@ async function startCamera() {
 
   document.getElementById('startBtn').style.display = 'none';
   setStatus('searching', 'statusStarting');
+  // iOS Safari sandboxes speechSynthesis unless the first speak() call happens
+  // inside the user gesture, before any `await`. Speak now to unlock audio.
+  speak(t('ttsCamStarted'));
 
   const video = document.getElementById('videoEl');
   const canvas = document.getElementById('overlayCanvas');
